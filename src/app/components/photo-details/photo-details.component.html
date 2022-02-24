@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h1 class="display-4">ID:{{photo?.id}}</h1>
+    <div *ngIf="photo">
+        <img src="{{photo.url}}">
+        <p class="lead">AlbumID:{{photo.albumId}}</p>
+        <hr class="my-4">
+        <p>Title:{{photo.title}}</p>
+        <p class="lead">URL:{{photo.url}}</p>
+        <p class="lead">Thumbnail URL:{{photo.thumbnailUrl}}</p>
+    </div>
+
+    <hr class="my-4">
+    <button class='btn btn-outline-secondary' style='width:80px' (click)='onBack()'>
+        <i class='fa fa-chevron-left'></i> Back
+    </button>
+    <button class='btn btn-primary' style='width:80px' (click)='onEdit()'>
+        Edit
+    </button>
+    <!-- <button class='btn btn-danger' style='width:80px' (click)='onDelete()'>
+        Delete
+    </button> -->
+</div>

@@ -1,0 +1,33 @@
+<!-- Default form contact -->
+<form #form="ngForm" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Edit</p>
+
+    <!-- AlbumID -->
+    <input [(ngModel)]="editedPhoto.albumId" type="number" [ngModelOptions]="{standalone: true}" name="albumID" min="1"
+        max="100" id="albumID" class="form-control mb-4" [value]="editedPhoto.albumId">
+
+    <!-- Title -->
+    <!-- <div [(ngModel)]="editedPhoto.title" class="form-group">
+        <textarea class="form-control rounded-0" id="photoTitle" name="photoTitle" rows="2"
+            [value]="editedPhoto.title"></textarea>
+    </div> -->
+
+    <input type="text" [(ngModel)]="editedPhoto.title" [ngModelOptions]="{standalone: true}" name="title" id="albumID"
+        class="form-control mb-4" [value]="editedPhoto.albumId">
+    <br>
+    <!-- Url -->
+    <input [(ngModel)]="editedPhoto.url" type="url" id="photoUrl" [ngModelOptions]="{standalone: true}"
+        class="form-control mb-4" [value]="editedPhoto.url">
+
+    <!-- Thumbnail Url -->
+    <input [(ngModel)]="editedPhoto.thumbnailUrl" type="url" [ngModelOptions]="{standalone: true}"
+        id="photoThumbnailUrl" class="form-control mb-4" [value]="editedPhoto.thumbnailUrl">
+
+    <!-- Send button -->
+    <button type="button" (click)='onSave()' class="btn btn-primary ">Save</button>
+    <!-- Send button -->
+    <button type="button" (click)='onCancel()' class="btn btn-danger ">Cancel</button>
+
+</form>
+<!-- Default form contact -->
