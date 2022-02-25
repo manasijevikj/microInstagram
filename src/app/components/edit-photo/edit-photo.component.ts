@@ -56,7 +56,6 @@ export class EditPhotoComponent implements OnInit {
   onSave(): void {
     console.log('Proverka ' + this.editedPhoto.id);
     this.updatePhoto(this.editedPhoto);
-    //povik do api za da napravime put i napravi guard zemi go idto tuka za da mozes da sejfnes
     this.router.navigate(['/photos']);
   }
 

@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HttpClientModule } from '@angular/common/http'; //da proveram
 import { FormsModule } from '@angular/forms';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +30,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule, // seka mozeme da go injectirame vo site klasi
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

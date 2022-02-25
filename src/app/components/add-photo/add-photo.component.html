@@ -1,1 +1,29 @@
-<p>add-photo works!</p>
+<!-- Default form contact -->
+<form #form="ngForm" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Add new Photo</p>
+
+    <!-- AlbumID -->
+    <label for="albumID">Album ID:</label>
+    <input [(ngModel)]="photo.albumId" type="number" [ngModelOptions]="{standalone: true}" name="albumID" min="1"
+        max="100" id="albumID" class="form-control mb-4" placeholder="Album ID:">
+
+    <!-- Title -->
+    <input type="text" [(ngModel)]="photo.title" [ngModelOptions]="{standalone: true}" name="title" id="albumID"
+        class="form-control mb-4" placeholder="Title:">
+    <br>
+    <!-- Url -->
+    <input [(ngModel)]="photo.url" type="url" id="photoUrl" [ngModelOptions]="{standalone: true}"
+        class="form-control mb-4" placeholder="URL:">
+
+    <!-- Thumbnail Url -->
+    <input [(ngModel)]="photo.thumbnailUrl" type="url" [ngModelOptions]="{standalone: true}" id="photoThumbnailUrl"
+        class="form-control mb-4" placeholder="Thambnail URL:">
+
+    <!-- Send button -->
+    <button type="button" (click)='onSave()' class="btn btn-primary ">Save</button>
+    <!-- Send button -->
+    <button type="button" (click)='onCancel()' class="btn btn-danger ">Cancel</button>
+
+</form>
+<!-- Default form contact -->

@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class PhotoDetailsComponent implements OnInit {
   photo: IPhoto | undefined; // kje ima kasnenje so !
   errorMessage = '';
+  id: number = Number(this.route.snapshot.paramMap.get('id'));
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -40,7 +41,13 @@ export class PhotoDetailsComponent implements OnInit {
     this.router.navigate(['/photos/edit/', this.photo?.id]);
   }
 
-  // onDelete(): void {
-  //   this.router.navigate(['/photos/delete/', this.photo?.id]);
-  // }
+  onDelete(): void {
+    this.apiService.deletePhoto(this.id).subscribe(
+      () => {
+        console.log('Successfuly deleted photo');
+      },
+      () => console.log('Failed to delete photo')
+    );
+    this.router.navigate(['home']);
+  }
 }
